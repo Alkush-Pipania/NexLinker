@@ -107,7 +107,7 @@ const Header = () => {
                   )}
                 </AnimatePresence>
               </motion.div>
-            ) : (
+            ) : ( 
               <Link to="/auth">
                 <motion.div
                   className='px-4 py-2 rounded-md border border-gray-300 bg-gray-200 hover:scale-95 duration-150'

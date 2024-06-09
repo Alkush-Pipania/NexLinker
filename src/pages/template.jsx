@@ -20,8 +20,8 @@ const Template = () => {
     title: "",
     image: null,
   });
-  
-const navigate = useNavigate();
+
+  const navigate = useNavigate();
   const [imageAsset, setImageAsset] = useState({
     isImageLoading: false,
     uri: null,
@@ -130,23 +130,23 @@ const navigate = useNavigate();
       name: templates.length > 0 ? `Template${templates.length + 1}` : "Template1",
       timestamp: timestamp,
     };
-    await setDoc(doc(db,"templates",id),_doc).then(() =>{
-      setFormData((prevData) => ({...prevData,title:"",image:""}))
-      setImageAsset((prevAsset) => ({...prevAsset,uri:null}))
+    await setDoc(doc(db, "templates", id), _doc).then(() => {
+      setFormData((prevData) => ({ ...prevData, title: "", image: "" }))
+      setImageAsset((prevAsset) => ({ ...prevAsset, uri: null }))
       setSelectedTags([])
       templateRefetch()
       toast.success("Template pushed to cloud")
-    }).catch(error =>{toast.error(`Error message : ${error.message}`)})
+    }).catch(error => { toast.error(`Error message : ${error.message}`) })
   };
 
   // if (templateIsLoading) return <p>Loading...</p>;
   if (templateIsError) return <p>Error: {templateIsError.message}</p>;
 
   // to remoke the template made by the admin ------------------------------
-  const deletetemplate = async (template) =>{
+  const deletetemplate = async (template) => {
     const deleteRef = ref(storage, template?.imageURL)
-    await deleteObject(deleteRef).then(async() =>{
-      await deleteDoc(doc(db,"templates",template?._id)).then(()=>{
+    await deleteObject(deleteRef).then(async () => {
+      await deleteDoc(doc(db, "templates", template?._id)).then(() => {
         toast.success("Template deleted successfully")
         templateRefetch()
       }).catch(err => {
@@ -154,13 +154,13 @@ const navigate = useNavigate();
       })
     })
   }
-  const {data: user,isLoading} = useUser()
-  useEffect(()=>{
-    if(!isLoading && !adminIds.includes(user?.uid)){
-      navigate("/builder",{replace:true})
+  const { data: user, isLoading } = useUser()
+  useEffect(() => {
+    if (!isLoading && !adminIds.includes(user?.uid)) {
+      navigate("/builder", { replace: true })
       toast.error("You are not authorized to access this page admine se baat kr")
     }
-  },[user,isLoading])
+  }, [user, isLoading])
 
   return (
     <div className="w-full px-4 lg:px-10 2xl:px-32 py-4 grid grid-cols-1 lg:grid-cols-12">
@@ -230,36 +230,36 @@ const navigate = useNavigate();
       {/* right vala */}
       <div className="col-span-12 lg:col-span-8 2xl:col-span-9 w-full flex-1 py-4">
         {/* Additional content for the right side */}
-          {templateIsLoading ? (
+        {templateIsLoading ? (
           <React.Fragment>
             <div className="w-full h-full flex items-center justify-center">
               <PuffLoader color="#498FCD" size={40} />
             </div>
-          </React.Fragment>): (<React.Fragment>
+          </React.Fragment>) : (<React.Fragment>
             {templates && templates.length > 0 ? (
 
 
               // template
 
 
-            <React.Fragment>
-              <div className="w-full h-full grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-4 gap-4">
-              {templates?.map(template =>(
-                <div key={template._id} className="w-full h-[500px] rounded-md overflow-hidden relative">
-                  <img src={template?.imageURL} alt="" className="h-full w-full object-cover" />
-                  <div className="absolute rounded-md flex top-4 right-4 w-8 h-8 items-center float-start justify-center bg-red-500 cursor-pointer" onClick={() => deletetemplate(template)}>
-                    <FaTrash className="text-sm text-white" />
-                  </div>
+              <React.Fragment>
+                <div className="w-full h-full grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-4 gap-4">
+                  {templates?.map(template => (
+                    <div key={template._id} className="w-full h-[500px] rounded-md overflow-hidden relative">
+                      <img src={template?.imageURL} alt="" className="h-full w-full object-cover" />
+                      <div className="absolute rounded-md flex top-4 right-4 w-8 h-8 items-center float-start justify-center bg-red-500 cursor-pointer" onClick={() => deletetemplate(template)}>
+                        <FaTrash className="text-sm text-white" />
+                      </div>
+                    </div>
+                  ))}
                 </div>
-              ))}
-              </div>
-            </React.Fragment>):(
-            <React.Fragment>
-              <div className="w-full h-full flex items-center justify-center">
-              <PuffLoader color="#498FCD" size={40} />
-              <p className=' text-xl tracking-wide'>NO DATA</p>
-            </div>
-            </React.Fragment>)}
+              </React.Fragment>) : (
+              <React.Fragment>
+                <div className="w-full h-full flex items-center justify-center">
+                  <PuffLoader color="#498FCD" size={40} />
+                  <p className=' text-xl tracking-wide'>NO DATA</p>
+                </div>
+              </React.Fragment>)}
           </React.Fragment>)}
       </div>
     </div>
