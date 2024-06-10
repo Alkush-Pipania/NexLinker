@@ -92,7 +92,7 @@ const Header = () => {
                       {data?.displayName && <p className="text-lg text-white"> {data?.displayName}</p>}
 
                       <div className="w-full flex-col flex gap-8 pt-6 items-start pb-3">
-                        <Link className="text-txtLight text-base whitespace-nowrap" to={'/profile'}>My account</Link>
+                        <Link className="text-txtLight text-base whitespace-nowrap" to={'/'}>My account</Link>
                         {/* template feature for admin only */}
                         {adminIds.includes(data?.uid) && (
                           <Link className="text-txtLight text-base whitespace-nowrap" to={'/builder/template/create'}>Add New Template</Link>
