@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import logo from '../assets/img/Resume builder2.png';
-import Fotter from '../container/fotter';
 import AuthButton from '../component/Authbutton';
 import { FaGoogle, FaGithub } from 'react-icons/fa';
 import useUser from '../hooks/useUser';
@@ -11,7 +9,6 @@ import { motion } from 'framer-motion';
 import Login from '../assets/img/login.png';
 import Listening from '../assets/img/listening.png'
 import Dumbbell from '../assets/img/dumbbell.png'
-import Educationn from '../assets/img/education.png'
 
 const Authentication = () => {
   const { data, isLoading } = useUser();
@@ -164,4 +161,3 @@ const Authentication = () => {
 
 
 export default Authentication;
-
