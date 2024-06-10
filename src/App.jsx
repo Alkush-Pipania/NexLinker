@@ -20,7 +20,7 @@ function App() {
           <Router>
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/builder" element={<PrivateRoute element={<Builder />} />} />  {/* Protect Builder route */}
+              <Route path="/builder/*" element={<PrivateRoute element={<Builder />} />} />  {/* Protect Builder route */}
               <Route path="/auth" element={<Authentication />} />
             </Routes>
           </Router>
