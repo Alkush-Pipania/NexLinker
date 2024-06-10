@@ -19,8 +19,8 @@ const Builder = () => {
           <Routes>
             <Route path='/' element={<HomeContainer />} />
             <Route path='/template/create' element={<Template />} />
-            <Route path='/profile/:uid' element={<UserProfile />} />
-            <Route path='/resume/*' element={<CreateResume />} />
+{/*             <Route path='/profile/:uid' element={<UserProfile />} /> */}
+{/*             <Route path='/resume/*' element={<CreateResume />} /> */}
             <Route path='/resumeDetail/:templateID' element={<TemplateDesignPInDetail />} />
           </Routes>
 
