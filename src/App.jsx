@@ -9,6 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { AuthProvider } from './context/AuthContext';  // Import AuthProvider
 import PrivateRoute from './component/PrivateRoute';  // Import PrivateRoute
 import { Suspense } from 'react';
+import NotFound from './pages/NotFound';
 
 function App() {
   const queryClient = new QueryClient();
@@ -22,6 +23,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/builder/*" element={<PrivateRoute element={<Builder />} />} />  {/* Protect Builder route */}
               <Route path="/auth" element={<Authentication />} />
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </Router>
         </Suspense>
