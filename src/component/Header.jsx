@@ -42,7 +42,7 @@ const Header = () => {
           onChange={handleSearchTerm}
           type="text"
           placeholder='Search here...'
-          className='flex-1 text-center bg-transparent text-base sm:w-[100px] outline-none h-10 bg-gray-100 border-none'
+          className='md:flex-1 lg:flex-1 text-center bg-transparent text-base outline-none lg:w-[] w-[150px] h-10 bg-gray-100 border-none'
         />
       </div>
       <div className='mr-2'>
