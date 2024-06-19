@@ -237,7 +237,7 @@ const Myfotterhome = () => {
                 <a className='px-2 py-2 rounded-lg cursor-pointer group hover:bg-blue-400 lasticon group' target="_blank" href='https://www.linkedin.com/in/alkush-pipania-49269929b/'> <FaLinkedinIn className='group-hover:scale-120' /></a>
                 <a className='px-2 py-2 rounded-lg cursor-pointer group hover:bg-blue-400 lasticon group' target="_blank" href='https://x.com/AlkushPipania'><FaXTwitter className='group-hover:scale-120 group-hover:text-black' /></a>
               </div>
-              <p className=' text-sm text-gray-400'>creators-1</p>
+              <p className=' text-sm text-gray-400'>creators-2</p>
               <div className='flex gap-3 pt-2'>
                 <a className='px-2 py-2 rounded-lg cursor-pointer group hover:bg-blue-400 lasticon' target="_blank" href='https://www.instagram.com/vishxlgupta_28/'> <CiInstagram className='group-hover:text-red-400 group-hover:scale-120' /></a>
                 <a className='px-2 py-2 rounded-lg cursor-pointer group hover:bg-blue-400 lasticon group' target="_blank" href='https://www.linkedin.com/in/vishal-gupta-9baaa1265/'> <FaLinkedinIn className='group-hover:scale-120' /></a>
