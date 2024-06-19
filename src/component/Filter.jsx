@@ -37,7 +37,7 @@ const Filter = () => {
         {FiltersData && FiltersData.map((item)=>(
           <div
            onClick={()=> handleFilterValue(item.value)}
-          key={item.id} className={`border border-gray-300 rounded-md px-2 py-2 cursor-pointer hover:shadow-md ${filterData?.searchTerm === item.value && "bg-black text-white"}`} {...(filterData?.searchTerm === item.value && { onClick: clearit })}>
+          key={item.id} className={`border border-gray-300 rounded-md px-2 py-2 text-white cursor-pointer hover:shadow-md ${filterData?.searchTerm === item.value? (" bg-gray-500 text-white") :("bg-gray-400") }`} {...(filterData?.searchTerm === item.value && { onClick: clearit })}>
             <p className="text-sm whitespace-nowrap">{item.label}</p>
           </div>
         ))}
