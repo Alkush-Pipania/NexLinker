@@ -89,3 +89,41 @@ export const saveToFavourite = async (user, data) => {
  
 };
 
+export const getTemplateDetails = async (templateId) => {
+  return new Promise((resolve, reject) => {
+    if (!templateId) {
+      return reject(new Error("Template ID is undefined"));
+    }
+
+    const docRef = doc(db, "templates", templateId);
+    const unsubscribe = onSnapshot(
+      docRef,
+      (doc) => {
+        if (doc.exists()) {
+          resolve(doc.data());
+        } else {
+          reject(new Error("Document does not exist"));
+        }
+      },
+      (error) => {
+        reject(error);
+      }
+    );
+
+    // Return the unsubscribe function to ensure it's called correctly
+    return () => unsubscribe();
+  });
+}
+
+export const getTemplateDetailEditByUser = (uid, resumeId) => {
+  return new Promise((resolve, reject) => {
+    const unsubscribe = onSnapshot(
+      doc(db, "users", uid, "resumes", resumeId),
+      (doc) => {
+        resolve(doc.data());
+      }
+    );
+
+    return unsubscribe;
+  });
+};

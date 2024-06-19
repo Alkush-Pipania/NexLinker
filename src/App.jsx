@@ -10,12 +10,13 @@ import { AuthProvider } from './context/AuthContext';  // Import AuthProvider
 import PrivateRoute from './component/PrivateRoute';  // Import PrivateRoute
 import { Suspense } from 'react';
 import NotFound from './pages/NotFound';
+import Findpeer from '../src/pages/Findpeer';
 
 function App() {
   const queryClient = new QueryClient();
 
   return (
-    <QueryClientProvider client={queryClient}>
+    <QueryClientProvider client={queryClient} >
       <AuthProvider>  {/* Wrap your app with AuthProvider */}
         <Suspense fallback={<div>Loading...</div>}>
           <Router>
@@ -24,6 +25,7 @@ function App() {
               <Route path="/builder/*" element={<PrivateRoute element={<Builder />} />} />  {/* Protect Builder route */}
               <Route path="/auth" element={<Authentication />} />
               <Route path="*" element={<NotFound />} />
+              <Route path="/find_peer" element={<Findpeer />} />
             </Routes>
           </Router>
         </Suspense>

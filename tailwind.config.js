@@ -7,7 +7,8 @@ module.exports = {
     extend: {
       fontFamily: {
         'inter-bold': ['Inter-Bold', 'Inter', 'Inter Placeholder', 'sans-serif'],
-        "feature-text": ["Inter", 'sans-serif']
+        "feature-text": ["Inter", 'sans-serif'],
+        "cominsoon": [ "Maven Pro", 'sans-serif']
       },
       fontSize: {
         'framersize': '36px',
@@ -21,7 +22,6 @@ module.exports = {
       spacing: {
         'spacfra': '40px',
       },
-    
       colors:{
         txtPrimary: "#555",
         txtLight: "#999",
@@ -31,10 +31,14 @@ module.exports = {
         headingstarting: "#EC4E02",
         hoverheadingstarting: "#BD521F",
         findpeer: "#333333",
-
+        authcolor: "#1f2836",
+        customizetemp: "#7730D9",
+        findpeer: "#7E7F7F"
+      },
+      screens: {
+        'custom': '1020px',
       },
     },
   },
-  plugins: [require('tailwind-scrollbar'),],
-}
-
+  plugins: [require('tailwind-scrollbar')],
+};

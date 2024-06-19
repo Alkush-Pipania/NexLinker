@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { FaGithub } from "react-icons/fa";
 import { Link } from 'react-router-dom';
-import logo from '../assets/img/Resume builder2.png';
 import { AnimatePresence, motion } from 'framer-motion';
 import '../index.css';
 
@@ -36,7 +35,7 @@ const HeaderMainPage = () => {
         </AnimatePresence>
 
 
-        <Link to={"/auth"} className="lg:text-lg whitespace-nowrap cursor-pointer lg:hover:bg-findpeer lg:py-2 lg:px-2 rounded-md">Find Your Peer</Link>
+        <Link to={"/find_peer"} className="lg:text-lg whitespace-nowrap cursor-pointer lg:hover:bg-findpeer lg:py-2 lg:px-2 rounded-md">Find Your Peer</Link>
         <Link to="/auth" className="bg-yellow-400 text-black rounded-lg lg:px-4 lg:py-2 px-[3px]   py-2 text-sm lg:text-lg whitespace-nowrap hover:bg-yellow-500 ">Create resume</Link>
       </div>
     </div>
