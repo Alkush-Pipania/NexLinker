@@ -60,7 +60,7 @@ const TemplateDesignPInDetail = () => {
 
 
   const navigateToEdit = () => {
-    if(templateID == "1718553790487" ){
+    if(templateID =="1718811219841" ){
      
       alert("👨‍💻 Developer working on this template. 🛠️ Thanks for your patience. 🙏😊");
     }else{
