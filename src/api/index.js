@@ -2,6 +2,8 @@ import { arrayRemove, arrayUnion, doc, onSnapshot, setDoc, updateDoc } from "fir
 import { auth, db } from "../config/firebase.config";
 import { collection, query, orderBy } from "firebase/firestore";
 import { toast } from 'react-toastify';
+
+
 export const getUserDetail = () => {
   return new Promise((resolve, reject) => {
     const unsubscribeAuth = auth.onAuthStateChanged(async (userCred) => {
@@ -20,17 +22,17 @@ export const getUserDetail = () => {
               reject(error);
             }
           }
-
-          // Unsubscribe from the Firestore snapshot listener
-          unsubscribeDoc();
         });
+
+        // Unsubscribe from the Firestore snapshot listener when no longer needed
+        return () => unsubscribeDoc();
       } else {
         reject(new Error("User is not authenticated"));
       }
-
-      // Unsubscribe from the Firebase Auth listener
-      unsubscribeAuth();
     });
+
+    // Unsubscribe from the Firebase Auth listener when no longer needed
+    return () => unsubscribeAuth();
   });
 };
 
