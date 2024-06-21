@@ -143,7 +143,7 @@ const Home = () => {
               />
             </motion.div>
             <motion.div
-              key="features-section" // Ensure a unique key for each motion div
+              key="features-section" 
             >
               <div className='flex flex-col items-center bg-white text-black justify-center lg:py-[64px] py-8 ' id='iamnext'>
                 <div className=" w-full flex flex-col items-center justify-center gap-2 " >
@@ -159,13 +159,13 @@ const Home = () => {
                   <motion.div key="feature-boxes">
                     <div className='flex items-center justify-center lg:gap-11 gap-7 pt-6 lg:flex-row flex-col'>
                       <Boxme
-                        key="box-1" // Ensure a unique key for each Boxme component
+                        key="box-1" 
                         image={humanwritng}
                         heading={"Fill in the Blanks"}
                         para={"Take a moment to fill in all the relevant details of your education, work experience, skills, achievements, and create a comprehensive and compelling resume that showcases your qualifications and makes you stand out to potential employers."}
                       />
                       <Boxme
-                        key="box-2" // Ensure a unique key for each Boxme component
+                        key="box-2" 
                         image={downlodimg}
                         heading={"Hit 'Download!'"}
                         para={"And yes, it's absolutely free! We take pride in providing a top-notch resume builder that doesn't hit you with a paywall. You can access all the features and benefits without spending a dime. So, create your resume in just two steps and kickstart your journey."}
