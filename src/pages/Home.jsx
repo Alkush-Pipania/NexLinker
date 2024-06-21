@@ -176,8 +176,8 @@ const Home = () => {
                 <ScrollAnimation duration={1.8}>
                   <motion.div key="explore-section">
                     <div className='flex flex-col justify-center items-center lg:w-[1109px] mt-[116px] gap-5 px-[32px] py-[64] mx-3 ' id='bluepotential'>
-                      <h3 className="lg:text-4xl text-2xl text-center pt-4 lg:pt-6 font-bold">So much more than a resume builder</h3>
-                      <p className="text-center lg:w-[529px]">Your job starts with a resume, but what about the interview? When you build your resume, you also get access to 18 powerful career tools. It’s the complete career toolkit, all in one place. If you're here, you're already on the way up.</p>
+                      <h3 className="lg:text-4xl text-2xl bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-center pt-4 lg:pt-6 font-bold">About the dev</h3>
+                      <p className="text-center lg:w-[529px]">I am a dedicated learner who loves creating new products. When I'm not sketching ideas, I'm either binge-watching Netflix or playing video games. Right now, I'm focused on learning and always open to connecting with others.</p>
                       <div></div>
                       <motion.div
                         ref={ref}
@@ -185,7 +185,9 @@ const Home = () => {
                         animate={inView ? 'visible' : 'hidden'}
                         variants={animationVariants}
                       >
-                        <button className='bg-blue-500 hover:bg-blue-600 rounded-lg px-2 py-3 text-white text-center' style={transitionStyle}>Explore Your Potential</button>
+                        <a style={transitionStyle} className='bg-blue-500 hover:bg-blue-600 rounded-lg px-4 py-3 text-white text-center' 
+                        href="mailto:workofalkushpipania@gmail.com?subject=Contact&body=Hello,">let's talk
+                        </a>
                       </motion.div>
                       <div className='lg:pb-4 pb-2'></div>
                     </div>
@@ -231,18 +233,13 @@ const Myfotterhome = () => {
           <div className="flex lg:gap-[135px] gap-8 items-center">
             <div className='text-start w-[150px] text-xl flex flex-col items-start justify-center'>
               <p>Connect with us on social media</p>
-              <p className=' text-sm text-gray-400'>creators-1</p>
+              
               <div className='flex gap-3 pt-2'>
                 <a className='px-2 py-2 rounded-lg cursor-pointer group hover:bg-blue-400 lasticon' target="_blank" href='https://www.instagram.com/al_ways_kush/'> <CiInstagram className='group-hover:text-red-400 group-hover:scale-120' /></a>
                 <a className='px-2 py-2 rounded-lg cursor-pointer group hover:bg-blue-400 lasticon group' target="_blank" href='https://www.linkedin.com/in/alkush-pipania-49269929b/'> <FaLinkedinIn className='group-hover:scale-120' /></a>
                 <a className='px-2 py-2 rounded-lg cursor-pointer group hover:bg-blue-400 lasticon group' target="_blank" href='https://x.com/AlkushPipania'><FaXTwitter className='group-hover:scale-120 group-hover:text-black' /></a>
               </div>
-              <p className=' text-sm text-gray-400'>creators-1</p>
-              <div className='flex gap-3 pt-2'>
-                <a className='px-2 py-2 rounded-lg cursor-pointer group hover:bg-blue-400 lasticon' target="_blank" href='https://www.instagram.com/vishxlgupta_28/'> <CiInstagram className='group-hover:text-red-400 group-hover:scale-120' /></a>
-                <a className='px-2 py-2 rounded-lg cursor-pointer group hover:bg-blue-400 lasticon group' target="_blank" href='https://www.linkedin.com/in/vishal-gupta-9baaa1265/'> <FaLinkedinIn className='group-hover:scale-120' /></a>
-
-              </div>
+              
             </div>
             <div className='flex flex-col justify-start items-start text-nowrap'>
               <div className="uppercase">
