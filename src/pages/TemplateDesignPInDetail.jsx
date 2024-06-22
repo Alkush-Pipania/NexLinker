@@ -168,10 +168,10 @@ const TemplateDesignPInDetail = () => {
           </div>
         </div>
       </div>
-      {template?.filter((temp) => temp._id !== data?._id)?.length > 0 && (
+     {template?.filter((temp) => temp._id !== data?._id)?.length > 0 && (
         <div className="w-full py-8 flex lg:mt-[100px] flex-col items-start justify-start gap-4 font-inter-bold">
           <p className="text-lg font-semibold whitespace-nowrap">You might also like</p>
-          <div className="grid w-full h-[80%] grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+          <div className="grid w-full  grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-3 gap-4">
             {template && template.length > 0 ? (
               <AnimatePresence>
                 {template?.filter((temp) => temp._id !== data?._id).map((template, index) => (
