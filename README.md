@@ -4,7 +4,7 @@
 This project is a **Resume Builder** application designed to help users create professional resumes. The application allows users to customize their resumes and even create their own resume templates. Built using modern web technologies, this project provides a seamless and interactive experience.
 
 ## Landing Page
-![Resume Builder Screenshot](https://via.placeholder.com/800x400.png?text=Screenshot+of+Resume+Builder](https://firebasestorage.googleapis.com/v0/b/resume-builder-2024-3d12f.appspot.com/o/Template%2Flandingpage.png?alt=media&token=7ff2101b-712e-4a74-8ddd-30b40d1c07d9)
+![Resume Builder Screenshot](https://firebasestorage.googleapis.com/v0/b/resume-builder-2024-3d12f.appspot.com/o/Template%2Flandingpage.png?alt=media&token=7ff2101b-712e-4a74-8ddd-30b40d1c07d9)
 
 
 ## Features
