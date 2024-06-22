@@ -12,6 +12,7 @@ import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 import * as htmlToImage from "html-to-image";
 import { isDesktop } from "../../utils/detectDevice";
+import { useMediaQuery } from 'react-responsive';
 
 
 
@@ -36,6 +37,8 @@ import { AnimatePresence, motion } from "framer-motion";
 import { FadeInOutWIthOpacity, opacityINOut } from "../../animations";
 
 const Template1 = () => {
+  const [isHovered, setIsHovered] = useState(false)
+  const isDesktop = useMediaQuery({ minWidth: 768 });
 
   const { pathname } = useLocation();
   const location = useLocation();
@@ -76,8 +79,8 @@ const Template1 = () => {
     setNotifcationis(false);
   };
 
-  
-  
+
+
 
 
 
@@ -504,7 +507,7 @@ const Template1 = () => {
           </motion.div>
         )}
       </AnimatePresence>
-      
+
       <div className="w-full ml-6 lg:ml-0 md:ml-0 flex items-center gap-2 px-4">
         <Link
           to={"/builder"}
@@ -546,24 +549,61 @@ const Template1 = () => {
               <p className="text-sm text-txtPrimary">Save</p>
             </div>
 
-            <div className=" flex items-center justify-center gap-2">
-              <p className="text-sm text-txtPrimary">Download : </p>
-              <BsFiletypePdf
-                className="text-2xl text-txtPrimary cursor-pointer"
-                onClick={generatePDF}
-              />
-              <BsFiletypePng
-                onClick={generatePng}
-                className="text-2xl text-txtPrimary cursor-pointer"
-              />
-              <BsFiletypeJpg
-                className="text-2xl text-txtPrimary cursor-pointer"
-                onClick={generateImage}
-              />
-              <BsFiletypeSvg
-                onClick={generateSvg}
-                className="text-2xl text-txtPrimary cursor-pointer"
-              />
+            <div
+              onMouseEnter={() => isDesktop && setIsHovered(true)}
+              onMouseLeave={() => isDesktop && setIsHovered(false)}
+              className="flex items-center justify-center cursor-pointer gap-2"
+            >
+              <p className="text-sm text-txtPrimary">Download</p>
+              {isDesktop ? (
+                isHovered && (
+                  <div className='absolute'>
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.85 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.85 }}
+                      transition={{ delay: 0.1 }}
+                      className='relative flex gap-3 -top-6'
+                    >
+                      <BsFiletypePdf
+                        className="text-2xl text-txtPrimary cursor-pointer"
+                        onClick={generatePDF}
+                      />
+                      <BsFiletypePng
+                        onClick={generatePng}
+                        className="text-2xl text-txtPrimary cursor-pointer"
+                      />
+                      <BsFiletypeJpg
+                        className="text-2xl text-txtPrimary cursor-pointer"
+                        onClick={generateImage}
+                      />
+                      <BsFiletypeSvg
+                        onClick={generateSvg}
+                        className="text-2xl text-txtPrimary cursor-pointer"
+                      />
+                    </motion.div>
+                  </div>
+                )
+              ) : (
+                <>
+                  <BsFiletypePdf
+                    className="text-2xl text-txtPrimary cursor-pointer"
+                    onClick={generatePDF}
+                  />
+                  <BsFiletypePng
+                    onClick={generatePng}
+                    className="text-2xl text-txtPrimary cursor-pointer"
+                  />
+                  <BsFiletypeJpg
+                    className="text-2xl text-txtPrimary cursor-pointer"
+                    onClick={generateImage}
+                  />
+                  <BsFiletypeSvg
+                    onClick={generateSvg}
+                    className="text-2xl text-txtPrimary cursor-pointer"
+                  />
+                </>
+              )}
             </div>
           </div>
           <div className="w-full flex-nowrap  h-auto grid grid-cols-12" ref={resumeRef}>
@@ -975,8 +1015,8 @@ const Template1 = () => {
                                       name="percentage"
                                       type="text"
                                       className={` outline-none border-none text-base tracking-wide capitalize font-semibold text-txtPrimary w-full ${isEdit
-                                          ? "bg-gray-200"
-                                          : "bg-transparent"
+                                        ? "bg-gray-200"
+                                        : "bg-transparent"
                                         }`}
                                     />
                                   )}

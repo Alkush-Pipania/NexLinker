@@ -31,8 +31,8 @@ const Header = () => {
   return (
     <header className="w-full flex justify-between  py-3 lg:px-8 border-b border-gray-300 bg-slate-700 z-50 lg:gap-12 fixed top-0">
       {/* logo */}
-      <Link to="/builder" className='flex items-center gap-4 text-sm font-semibold group'>
-        <img src={logo} className="w-11 h-auto object-contain" alt="rkg-resumebuilder" />
+      <Link to="/builder" className='flex items-center gap-1 text-sm font-semibold group'>
+        <img src={logo} className="w-12 h-auto object-contain" alt="rkg-resumebuilder" />
         <h3 className="text-headingcol group-hover:text-blue-500 transition ease-in-out delay-150 text-xl duration-300">NexLinker</h3>
       </Link>
       {/* input */}

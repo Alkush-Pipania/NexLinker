@@ -98,13 +98,13 @@ const TemplateDesignPInDetail = () => {
         <div className="col-span-1 lg:col-span-8 flex flex-col items-start lg:items-center justify-center gap-4">
           <img src={data?.imageURL} className="w-[602px] h-auto object-contain rounded-md" alt="" />
         </div>
-        <div className="col-span-1 lg:col-span-4 flex items-start justify-start">
+        <div className="col-span-1 lg:col-span-4 flex items-center lg:items-center lg:mr-14 justify-start">
           <div className="flex flex-col items-start gap-2 justify-start">
             <div className="flex justify-between gap-4 items-center">
               <h3 className="font-inter-bold text-4xl">{data?.title}</h3>
-              <div className="flex items-center justify-center gap-1">
+              <div className="flex items-center justify-center">
                 <FaHeart className="text-base text-red-500" />
-                <p className="text-base">{data?.favourite?.length} likes</p>
+                <p className="text-base text-nowrap ml-4">{data?.favourite?.length} likes</p>
               </div>
             </div>
             <h3 className="text-sm font-light text-gray-400">resume 21 x 29.7 cm</h3>

@@ -67,8 +67,8 @@ const Authentication = () => {
       <div className="lg:w-[650px] w-full flex flex-col justify-center items-center bg-black text-white px-8 py-4">
         <div className="max-w-md w-full">
           <Link to="/" className="mb-8 flex gap-3 items-center">
-            <img src={nexlinker} alt="Nexlinker" className="h-11" />
-            <h3 className="font-inter-bold font-bold text-gray-100 group-hover:text-white">
+            <img src={nexlinker} alt="Nexlinker" className="w-14 h-auto" />
+            <h3 className="font-inter-bold font-bold text-3xl text-gray-100 group-hover:text-white">
               Nexlinker
             </h3>
           </Link>
