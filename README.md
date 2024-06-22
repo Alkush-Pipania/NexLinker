@@ -29,7 +29,7 @@ This project is a **Resume Builder** application designed to help users create p
 - 🔐 **Firebase Integration**: Overcame initial challenges with Firebase authentication and data fetching by refining the implementation and using React Query for better state management.
 
 ## Usage
-To use the Resume Builder, navigate to `http://localhost:3000` in your web browser. From there, you can create and customize your resume.
+To use the Resume Builder, navigate to `(https://nex-linker.vercel.app/)` in your web browser. From there, you can create and customize your resume.
 
 ## Contributing
 If you would like to contribute to this project, please fork the repository and create a pull request with your changes. Contributions are welcome!
