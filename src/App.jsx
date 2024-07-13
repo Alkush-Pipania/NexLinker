@@ -6,8 +6,8 @@ import { ReactQueryDevtools } from 'react-query/devtools';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { AuthProvider } from './context/AuthContext';  // Import AuthProvider
-import PrivateRoute from './component/PrivateRoute';  // Import PrivateRoute
+import { AuthProvider } from './context/AuthContext';  
+import PrivateRoute from './component/PrivateRoute'; 
 import { Suspense } from 'react';
 import NotFound from './pages/NotFound';
 import Findpeer from '../src/pages/Findpeer';
@@ -17,7 +17,7 @@ function App() {
 
   return (
     <QueryClientProvider client={queryClient} >
-      <AuthProvider>  {/* Wrap your app with AuthProvider */}
+      <AuthProvider> 
         <Suspense fallback={<div>Loading...</div>}>
           <Router>
             <Routes>
